@@ -7,4 +7,6 @@ public interface ProdutoService {
     Iterable<Produto> listar();
 
     Produto cadastrar(Produto produto);
+
+    Produto atualizar(Produto produto, Long id);
 }
