@@ -1,4 +1,10 @@
 package br.com.impacta.produtos.service;
 
-public class ProdutoService {
+import br.com.impacta.produtos.model.Produto;
+
+public interface ProdutoService {
+
+    Iterable<Produto> listar();
+
+    Produto cadastrar(Produto produto);
 }
