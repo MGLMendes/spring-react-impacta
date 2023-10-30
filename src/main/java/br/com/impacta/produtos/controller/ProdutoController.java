@@ -38,7 +38,7 @@ public class ProdutoController {
         produtoService.atualizar(produto, id);
     }
 
-    @DeleteMapping("/remover")
+    @DeleteMapping("/remover/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void removerProduto(@PathVariable Long id) {
         produtoService.remover(id);
