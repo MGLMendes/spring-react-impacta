@@ -25,7 +25,7 @@ public class ProdutoServiceImpl implements ProdutoService {
     }
 
     @Override
-    public Produto atualizar(Produto produto, Long id) {
+    public void atualizar(Produto produto, Long id) {
 
         Optional<Produto> produtoById = produtoRepository.findById(id);
 
@@ -34,9 +34,13 @@ public class ProdutoServiceImpl implements ProdutoService {
             produtoById.get().setNome(produto.getNome());
             produtoById.get().setMarca(produto.getMarca());
 
-            return produtoRepository.save(produtoById.get());
+             produtoRepository.save(produtoById.get());
         }
+    }
 
-        return null;
+    @Override
+    public void remover(Long id) {
+        Optional<Produto> produtoById = produtoRepository.findById(id);
+        produtoById.ifPresent(produtoRepository::delete);
     }
 }

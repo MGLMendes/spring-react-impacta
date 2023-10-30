@@ -8,5 +8,7 @@ public interface ProdutoService {
 
     Produto cadastrar(Produto produto);
 
-    Produto atualizar(Produto produto, Long id);
+    void atualizar(Produto produto, Long id);
+
+    void remover(Long id);
 }
